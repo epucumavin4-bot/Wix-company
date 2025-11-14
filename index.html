@@ -3,22 +3,20 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Journey Blog</title>
+    <title>WIX - Innovation Redefined</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
-
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet"/>
     <style>
         :root {
-            --primary: #ff4500;
-            --secondary: #ff6b35;
-            --accent: #ffb84d;
-            --dark: #1a0d0a;
-            --darker: #0f0705;
-            --light: #fff5f0;
-            --glow-primary: 0 0 30px rgba(255, 69, 0, 0.7);
-            --glow-accent: 0 0 35px rgba(255, 184, 77, 0.8);
+            --primary: #00e0ff;
+            --secondary: #7c3aed;
+            --accent: #ff2e63;
+            --dark: #0a0a1a;
+            --darker: #050515;
+            --glow-primary: 0 0 30px rgba(0, 224, 255, 0.7);
+            --glow-secondary: 0 0 30px rgba(124, 58, 237, 0.7);
             --transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
-            --blur: blur(18px);
+            --blur: blur(15px);
         }
 
         * {
@@ -29,9 +27,10 @@
 
         body {
             font-family: 'Poppins', sans-serif;
-            background: linear-gradient(135deg, var(--darker) 0%, var(--dark) 50%, #2c1100 100%);
-            color: var(--light);
+            background: linear-gradient(135deg, var(--darker) 0%, var(--dark) 50%, #0f0f2e 100%);
+            color: #e0e7ff;
             overflow-x: hidden;
+            min-height: 100vh;
             position: relative;
         }
 
@@ -41,17 +40,17 @@
             top: 0; left: 0;
             width: 100%; height: 100%;
             background: 
-                radial-gradient(circle at 10% 90%, rgba(255, 69, 0, 0.18), transparent 50%),
-                radial-gradient(circle at 90% 10%, rgba(255, 107, 53, 0.18), transparent 50%),
-                radial-gradient(circle at 50% 50%, rgba(255, 184, 77, 0.1), transparent 60%);
+                radial-gradient(circle at 20% 80%, rgba(0, 224, 255, 0.12), transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(124, 58, 237, 0.12), transparent 50%),
+                radial-gradient(circle at 50% 50%, rgba(255, 46, 99, 0.08), transparent 60%);
             pointer-events: none;
             z-index: -1;
-            animation: wanderGlow 15s infinite ease-in-out;
+            animation: float 20s infinite ease-in-out;
         }
 
-        @keyframes wanderGlow {
-            0%, 100% { transform: scale(1); opacity: 0.9; }
-            50% { transform: scale(1.12); opacity: 1; }
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-30px) rotate(1deg); }
         }
 
         /* Navbar */
@@ -65,68 +64,68 @@
             align-items: center;
             z-index: 1000;
             transition: var(--transition);
-            backdrop-filter: blur(6px);
-            background: rgba(26, 13, 10, 0.35);
-            border-bottom: 1px solid rgba(255, 69, 0, 0.2);
+            backdrop-filter: blur(5px);
+            background: rgba(10, 10, 26, 0.3);
+            border-bottom: 1px solid rgba(0, 224, 255, 0.15);
         }
 
         .navbar.scrolled {
             padding: 1rem 6%;
-            background: rgba(15, 7, 5, 0.92);
+            background: rgba(5, 5, 21, 0.85);
             backdrop-filter: var(--blur);
-            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.6);
-            border-bottom: 1px solid rgba(255, 69, 0, 0.45);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+            border-bottom: 1px solid rgba(0, 224, 255, 0.3);
         }
 
         .logo {
-            font-family: 'Dancing Script', cursive;
-            font-size: 2.6rem;
-            font-weight: 700;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.2rem;
+            font-weight: 900;
             background: linear-gradient(45deg, var(--primary), var(--secondary), var(--accent));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             text-shadow: var(--glow-primary);
-            letter-spacing: 1.5px;
+            letter-spacing: 2px;
             position: relative;
             transition: var(--transition);
         }
 
         .logo::after {
-            content: 'Journey';
+            content: 'WIX';
             position: absolute;
             top: 0; left: 0;
             background: linear-gradient(45deg, var(--accent), var(--primary));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-            animation: pathWave 4s infinite;
-            opacity: 0.75;
+            animation: wave 3s infinite;
+            opacity: 0.7;
         }
 
-        @keyframes pathWave {
+        @keyframes wave {
             0%, 100% { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
-            50% { clip-path: polygon(0 25%, 100% 0, 100% 75%, 0 100%); }
+            50% { clip-path: polygon(0 20%, 100% 0, 100% 80%, 0 100%); }
         }
 
         .logo:hover {
-            transform: scale(1.12);
+            transform: scale(1.1) rotate(2deg);
             filter: brightness(1.4);
         }
 
         .nav-links {
             display: flex;
-            gap: 3.2rem;
+            gap: 3rem;
         }
 
         .nav-links a {
-            color: var(--light);
+            color: #e0e7ff;
             text-decoration: none;
             font-weight: 600;
             font-size: 1.1rem;
             position: relative;
             transition: var(--transition);
             padding: 0.5rem 0;
-            letter-spacing: 0.8px;
+            letter-spacing: 0.5px;
         }
 
         .nav-links a::before {
@@ -155,18 +154,18 @@
 
         .menu-toggle {
             display: none;
-            font-size: 1.9rem;
+            font-size: 1.8rem;
             color: var(--primary);
             cursor: pointer;
-            padding: 0.6rem;
+            padding: 0.5rem;
             border-radius: 50%;
-            background: rgba(255, 69, 0, 0.15);
+            background: rgba(0, 224, 255, 0.1);
             transition: var(--transition);
         }
 
         .menu-toggle:hover {
-            background: rgba(255, 69, 0, 0.35);
-            transform: rotate(180deg);
+            background: rgba(0, 224, 255, 0.3);
+            transform: rotate(90deg);
         }
 
         /* Hero Section */
@@ -186,70 +185,70 @@
             top: 0; left: 0;
             width: 100%; height: 100%;
             background: 
-                radial-gradient(circle at 10% 90%, rgba(255, 69, 0, 0.25), transparent 50%),
-                radial-gradient(circle at 90% 10%, rgba(255, 107, 53, 0.25), transparent 50%);
-            animation: sunsetPulse 7s infinite alternate;
+                radial-gradient(circle at 10% 90%, rgba(0, 224, 255, 0.2), transparent 50%),
+                radial-gradient(circle at 90% 10%, rgba(124, 58, 237, 0.2), transparent 50%);
+            animation: pulseGlow 6s infinite alternate;
         }
 
-        @keyframes sunsetPulse {
-            0% { opacity: 0.7; transform: scale(1); }
-            100% { opacity: 1; transform: scale(1.18); }
+        @keyframes pulseGlow {
+            0% { opacity: 0.6; transform: scale(1); }
+            100% { opacity: 1; transform: scale(1.15); }
         }
 
         .hero-content {
-            max-width: 1350px;
-            display: grid;
+            max-width: 1300px;
+            display: flex;
             grid-template-columns: 1fr 1fr;
             gap: 5rem;
             align-items: center;
             z-index: 2;
         }
+        
 
         .hero-text h1 {
-            font-family: 'Dancing Script', cursive;
-            font-size: 5.2rem;
-            margin-bottom: 1.2rem;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 4.5rem;
+            margin-bottom: 1rem;
             background: linear-gradient(45deg, var(--primary), var(--secondary), var(--accent));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            animation: wanderGlowText 3s ease-in-out infinite alternate;
+            animation: neonText 2s ease-in-out infinite alternate;
             line-height: 1.1;
-            text-shadow: 0 0 40px rgba(255, 69, 0, 0.6);
         }
 
-        @keyframes wanderGlowText {
+        @keyframes neonText {
             from { 
-                filter: drop-shadow(0 0 18px rgba(255, 69, 0, 0.8));
+                filter: drop-shadow(0 0 15px rgba(0, 224, 255, 0.8));
                 text-shadow: var(--glow-primary);
             }
             to { 
-                filter: drop-shadow(0 0 48px rgba(255, 184, 77, 0.9));
-                text-shadow: var(--glow-accent);
+                filter: drop-shadow(0 0 35px rgba(124, 58, 237, 0.9));
+                text-shadow: var(--glow-secondary);
             }
         }
 
         .hero-text h3 {
-            font-size: 2.1rem;
-            color: #ff9a6a;
+            font-size: 2rem;
+            color: #a0a8ff;
             margin-bottom: 1.5rem;
             font-weight: 600;
         }
 
         .hero-text p {
-            font-size: 1.25rem;
-            color: #ffccbc;
-            margin-bottom: 3rem;
-            max-width: 580px;
-            line-height: 1.9;
+            font-size: 1.2rem;
+            color: #b0b8ff;
+            margin-bottom: 2.5rem;
+            max-width: 550px;
+            line-height: 1.8;
         }
 
         .cta-buttons {
             display: flex;
-            gap: 2rem;
+            gap: 1.8rem;
         }
 
         .btn {
-            padding: 1.1rem 3rem;
+            padding: 1rem 2.5rem;
             border: none;
             border-radius: 50px;
             font-weight: 700;
@@ -258,8 +257,8 @@
             position: relative;
             overflow: hidden;
             text-transform: uppercase;
-            letter-spacing: 1.8px;
-            font-size: 1.05rem;
+            letter-spacing: 1.5px;
+            font-size: 1rem;
             z-index: 1;
         }
 
@@ -268,8 +267,8 @@
             position: absolute;
             top: 0; left: -100%;
             width: 100%; height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.35), transparent);
-            transition: 0.8s;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: 0.7s;
             z-index: -1;
         }
 
@@ -285,14 +284,14 @@
 
         .btn-outline {
             background: transparent;
-            color: var(--accent);
-            border: 2px solid var(--accent);
-            box-shadow: var(--glow-accent);
+            color: var(--primary);
+            border: 2px solid var(--primary);
+            box-shadow: var(--glow-primary);
         }
 
         .btn:hover {
-            transform: translateY(-10px) scale(1.07);
-            box-shadow: 0 0 55px rgba(255, 69, 0, 1);
+            transform: translateY(-8px) scale(1.05);
+            box-shadow: 0 0 50px rgba(0, 224, 255, 0.9);
         }
 
         .btn-primary:hover {
@@ -300,7 +299,7 @@
         }
 
         .btn-outline:hover {
-            background: var(--accent);
+            background: var(--primary);
             color: var(--dark);
             border-color: transparent;
         }
@@ -308,6 +307,21 @@
         .hero-image {
             text-align: center;
             position: relative;
+        }
+
+
+
+        @keyframes rotate3D {
+            0% { transform: perspective(1000px) rotateY(0deg) rotateX(0deg); }
+            100% { transform: perspective(1000px) rotateY(360deg) rotateX(10deg); }
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .image{
+            
         }
         /* image*/
         .fade-mask{
@@ -326,23 +340,17 @@
 
         }
 
-        
-
-        
-
-       
-
-        /* About me */
-        .about {
-            padding: 130px 6%;
-            background: rgba(26, 13, 10, 0.55);
+        /* Services Section */
+        .services {
+            padding: 120px 6%;
+            background: rgba(10, 10, 26, 0.5);
         }
 
         .section-title {
             text-align: center;
-            font-family: 'Dancing Script', cursive;
-            font-size: 3.8rem;
-            margin-bottom: 4.5rem;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 3.2rem;
+            margin-bottom: 4rem;
             background: linear-gradient(45deg, var(--primary), var(--secondary), var(--accent));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -352,221 +360,208 @@
         .section-title::after {
             content: '';
             position: absolute;
-            bottom: -18px;
+            bottom: -15px;
             left: 50%;
             transform: translateX(-50%);
-            width: 140px;
-            height: 6px;
+            width: 120px;
+            height: 5px;
             background: linear-gradient(90deg, var(--primary), var(--secondary));
             border-radius: 3px;
             box-shadow: var(--glow-primary);
-            animation: pathLine 2s infinite alternate;
+            animation: expand 2s infinite alternate;
         }
 
-        @keyframes pathLine {
-            0% { width: 100px; }
-            100% { width: 180px; }
+        @keyframes expand {
+            0% { width: 80px; }
+            100% { width: 150px; }
         }
 
-        .about-content {
-            max-width: 1100px;
-            margin: 0 auto;
-            text-align: center;
-            font-size: 1.2rem;
-            line-height: 2;
-            color: #ffccbc;
-        }
-
-        /* Skills Section */
-        .skills {
-            padding: 130px 6%;
-        }
-
-        .skills-container {
-            max-width: 1100px;
-            margin: 0 auto;
+        .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2.5rem;
+            max-width: 1300px;
+            margin: 0 auto;
         }
 
-        .skill-card {
-            background: rgba(20, 15, 15, 0.5);
+        .service-card {
+            background: rgba(15, 15, 35, 0.4);
             padding: 2.5rem;
-            border-radius: 28px;
-            backdrop-filter: blur(14px);
-            border: 1px solid rgba(255, 69, 0, 0.3);
+            border-radius: 25px;
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(0, 224, 255, 0.25);
             transition: var(--transition);
             position: relative;
             overflow: hidden;
             text-align: center;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
         }
 
-        .skill-card::before {
+        .service-card::before {
             content: '';
             position: absolute;
             top: -50%; left: -50%;
             width: 200%; height: 200%;
-            background: radial-gradient(circle, rgba(255, 69, 0, 0.18), transparent);
+            background: radial-gradient(circle, rgba(0, 224, 255, 0.15), transparent);
             transition: var(--transition);
             opacity: 0;
         }
 
-        .skill-card:hover::before {
+        .service-card:hover::before {
             opacity: 1;
-            animation: rotate 12s linear infinite;
+            animation: rotate 10s linear infinite;
         }
 
-        .skill-card:hover {
-            transform: translateY(-20px) scale(1.04);
-            box-shadow: 0 35px 70px rgba(255, 69, 0, 0.35);
+        .service-card:hover {
+            transform: translateY(-20px) scale(1.03);
+            box-shadow: 0 30px 60px rgba(0, 224, 255, 0.3);
             border-color: var(--primary);
         }
 
-        .skill-icon {
-            font-size: 3.8rem;
+        .service-icon {
+            font-size: 3.5rem;
             margin-bottom: 1.5rem;
             background: linear-gradient(45deg, var(--primary), var(--secondary));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            filter: drop-shadow(0 0 25px rgba(255, 69, 0, 0.6));
+            filter: drop-shadow(0 0 20px rgba(0, 224, 255, 0.5));
         }
 
-        .skill-name {
-            font-size: 1.5rem;
+        .service-card h3 {
+            font-size: 1.6rem;
             margin-bottom: 1rem;
-            color: var(--accent);
+            color: var(--primary);
+        }
+
+        .service-card p {
+            color: #b0b8ff;
+            line-height: 1.7;
+        }
+
+        /* Stats Section */
+        .stats {
+            padding: 100px 6%;
+        }
+
+        .stats-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .stat-item {
+            position: relative;
+            padding: 2rem;
+        }
+
+        .stat-circle {
+            width: 180px;
+            height: 180px;
+            margin: 0 auto 1.5rem;
+            position: relative;
+        }
+
+        .circle-bg {
+            fill: none;
+            stroke: rgba(0, 224, 255, 0.2);
+            stroke-width: 12;
+        }
+
+        .circle-progress {
+            fill: none;
+            stroke: url(#gradient);
+            stroke-width: 12;
+            stroke-linecap: round;
+            transform: rotate(-90deg);
+            transform-origin: 50% 50%;
+            stroke-dasharray: 502;
+            stroke-dashoffset: 502;
+            transition: stroke-dashoffset 2s ease;
+        }
+
+        .stat-number {
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .stat-label {
+            font-size: 1.1rem;
+            color: #a0a8ff;
             font-weight: 600;
         }
 
-        .skill-bar {
-            height: 14px;
-            background: rgba(255, 255, 255, 0.12);
-            border-radius: 7px;
-            overflow: hidden;
-            position: relative;
-            margin-bottom: 0.6rem;
+        /* Team Section */
+        .team {
+            padding: 120px 6%;
+            background: rgba(10, 10, 26, 0.5);
         }
 
-        .skill-progress {
-            height: 100%;
-            background: linear-gradient(90deg, var(--primary), var(--secondary));
-            border-radius: 7px;
-            width: 0;
-            transition: width 2.2s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .skill-progress::after {
-            content: '';
-            position: absolute;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-            animation: shimmer 2s infinite;
-        }
-
-        @keyframes shimmer {
-            0% { transform: translateX(-100%); }
-            100% { transform: translateX(100%); }
-        }
-
-        .skill-percent {
-            text-align: right;
-            font-size: 0.95rem;
-            color: var(--primary);
-            font-weight: 700;
-        }
-
-        /* Blog Posts */
-        .blog {
-            padding: 130px 6%;
-            background: rgba(26, 13, 10, 0.55);
-        }
-
-        .blog-grid {
+        .team-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2.8rem;
-            max-width: 1350px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+            max-width: 1300px;
             margin: 0 auto;
         }
 
-        .blog-card {
+        .team-card {
             position: relative;
-            border-radius: 28px;
+            border-radius: 25px;
             overflow: hidden;
-            height: 420px;
+            height: 380px;
             cursor: pointer;
             transition: var(--transition);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
         }
 
-        .blog-card img {
+        .team-card img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             transition: var(--transition);
         }
 
-        .blog-card:hover img {
-            transform: scale(1.18);
+        .team-card:hover img {
+            transform: scale(1.2);
         }
 
-        .blog-overlay {
+        .team-overlay {
             position: absolute;
             bottom: 0;
             left: 0;
             width: 100%;
-            padding: 2.2rem;
-            background: linear-gradient(transparent, rgba(15, 7, 5, 0.95));
-            transform: translateY(45%);
+            padding: 2rem;
+            background: linear-gradient(transparent, rgba(10, 10, 26, 0.95));
+            transform: translateY(40%);
             transition: var(--transition);
         }
 
-        .blog-card:hover .blog-overlay {
+        .team-card:hover .team-overlay {
             transform: translateY(0);
         }
 
-        .blog-title {
-            font-size: 1.55rem;
-            color: var(--accent);
-            margin-bottom: 0.6rem;
-            font-weight: 700;
+        .team-name {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
         }
 
-        .blog-meta {
-            display: flex;
-            justify-content: space-between;
-            color: #ff9a6a;
-            font-size: 0.9rem;
+        .team-role {
+            color: #a0a8ff;
             font-weight: 500;
         }
 
-        .new-badge {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            background: var(--primary);
-            color: white;
-            padding: 0.5rem 1.1rem;
-            border-radius: 50px;
-            font-size: 0.8rem;
-            font-weight: 700;
-            box-shadow: var(--glow-primary);
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.12); }
-        }
-
-        /* Contact */
+        /* Contact Section */
         .contact {
-            padding: 130px 6%;
+            padding: 120px 6%;
         }
 
         .contact-container {
@@ -578,7 +573,7 @@
         .contact-form {
             display: grid;
             gap: 1.8rem;
-            margin-top: 3.5rem;
+            margin-top: 3rem;
         }
 
         .form-group {
@@ -589,10 +584,10 @@
         .form-group textarea {
             width: 100%;
             padding: 1.3rem 1.8rem;
-            background: rgba(20, 15, 15, 0.5);
-            border: 1px solid rgba(255, 69, 0, 0.35);
+            background: rgba(15, 15, 35, 0.5);
+            border: 1px solid rgba(0, 224, 255, 0.3);
             border-radius: 15px;
-            color: var(--light);
+            color: #e0e7ff;
             font-size: 1.1rem;
             transition: var(--transition);
             backdrop-filter: blur(8px);
@@ -609,7 +604,7 @@
             position: absolute;
             top: 1.3rem;
             left: 1.8rem;
-            color: #ff9a6a;
+            color: #888;
             transition: var(--transition);
             pointer-events: none;
             font-size: 1rem;
@@ -630,31 +625,31 @@
 
         /* Footer */
         footer {
-            padding: 5rem 6%;
+            padding: 4rem 6%;
             text-align: center;
-            background: rgba(15, 7, 5, 0.95);
-            border-top: 1px solid rgba(255, 69, 0, 0.3);
+            background: rgba(5, 5, 21, 0.95);
+            border-top: 1px solid rgba(0, 224, 255, 0.2);
         }
 
         .social-links {
             display: flex;
             justify-content: center;
-            gap: 2.5rem;
-            margin-bottom: 2.5rem;
+            gap: 2rem;
+            margin-bottom: 2rem;
         }
 
         .social-links a {
-            width: 65px;
-            height: 65px;
+            width: 60px;
+            height: 60px;
             border-radius: 50%;
-            background: rgba(255, 69, 0, 0.2);
+            background: rgba(0, 224, 255, 0.15);
             display: flex;
             align-items: center;
             justify-content: center;
             color: var(--primary);
-            font-size: 1.6rem;
+            font-size: 1.5rem;
             transition: var(--transition);
-            border: 1px solid rgba(255, 69, 0, 0.4);
+            border: 1px solid rgba(0, 224, 255, 0.4);
             position: relative;
             overflow: hidden;
             text-decoration: none;
@@ -665,8 +660,8 @@
             position: absolute;
             top: 0; left: -100%;
             width: 100%; height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-            transition: 0.8s;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: 0.7s;
         }
 
         .social-links a:hover::before {
@@ -675,8 +670,8 @@
 
         .social-links a:hover {
             background: var(--primary);
-            color: white;
-            transform: translateY(-15px) rotate(360deg);
+            color: var(--dark);
+            transform: translateY(-12px) rotate(360deg);
             box-shadow: var(--glow-primary);
         }
 
@@ -685,19 +680,19 @@
             .hero-content {
                 grid-template-columns: 1fr;
                 text-align: center;
-                gap: 4rem;
+                gap: 3rem;
             }
 
             .hero-text h1 {
-                font-size: 4.2rem;
+                font-size: 3.5rem;
             }
 
-            .compass {
-                width: 320px;
-                height: 320px;
+            .logo-3d {
+                width: 300px;
+                height: 300px;
             }
 
-            .compass::after {
+            .logo-3d::before {
                 font-size: 4rem;
             }
         }
@@ -708,14 +703,14 @@
                 top: 100%;
                 left: 0;
                 width: 100%;
-                background: rgba(15, 7, 5, 0.98);
+                background: rgba(5, 5, 21, 0.98);
                 flex-direction: column;
                 align-items: center;
                 padding: 3rem 0;
                 transform: translateY(-100%);
                 transition: var(--transition);
                 backdrop-filter: var(--blur);
-                border-bottom: 1px solid rgba(255, 69, 0, 0.4);
+                border-bottom: 1px solid rgba(0, 224, 255, 0.3);
             }
 
             .nav-links.active {
@@ -727,31 +722,36 @@
             }
 
             .hero-text h1 {
-                font-size: 3.6rem;
+                font-size: 3rem;
             }
 
             .cta-buttons {
                 justify-content: center;
                 flex-wrap: wrap;
             }
+
+            .btn {
+                padding: 0.9rem 2rem;
+                font-size: 0.95rem;
+            }
         }
 
         @media (max-width: 480px) {
             .hero-text h1 {
-                font-size: 2.8rem;
+                font-size: 2.5rem;
             }
 
-            .compass {
-                width: 260px;
-                height: 260px;
+            .logo-3d {
+                width: 250px;
+                height: 250px;
             }
 
-            .compass::after {
-                font-size: 3.2rem;
+            .logo-3d::before {
+                font-size: 3.5rem;
             }
 
             .section-title {
-                font-size: 3rem;
+                font-size: 2.5rem;
             }
         }
     </style>
@@ -759,15 +759,15 @@
 <body>
     <!-- Navigation -->
     <nav class="navbar" id="navbar">
-        <div class="logo"></div>
+        <div class="logo">WIX</div>
         <div class="menu-toggle" id="menuToggle">
-            <i class="fas fa-compass"></i>
+            <i class="fas fa-bars"></i>
         </div>
         <div class="nav-links" id="navLinks">
             <a href="#home">Home</a>
-            <a href="#about">About</a>
-            <a href="#skills">Skills</a>
-            <a href="#blog">Blog</a>
+            <a href="#services">Services</a>
+            <a href="#stats">Stats</a>
+            <a href="#team">Team</a>
             <a href="#contact">Contact</a>
         </div>
     </nav>
@@ -776,161 +776,159 @@
     <section class="hero" id="home">
         <div class="hero-content">
             <div class="hero-text">
-                <h1> Mavin Epucu</h1>
-                <h3>My Epic Learning Journey: From Novice to Pro</h3>
-                <p> </p>Dive into the highs and lows of mastering web development. This project explores key insights I discovered
-                during my journey adventure and  how I overcame common pitfalls.
+                <h1> WIX</h1>
+                <h3>Innovation Redefined</h3>
+                <p>We transform visionary ideas into cutting-edge digital solutions. From AI-powered platforms to immersive experiences, we build the future of technology with passion and precision.</p>
                 <div class="cta-buttons">
-                    <button class="btn btn-primary">Start Reading</button>
-                    <button class="btn btn-outline">Follow Journey</button>
+                    <button class="btn btn-primary">Get Started</button>
+                    <button class="btn btn-outline">Learn More</button>
                 </div>
             </div>
             <div class="hero-image">
-                <div class="compass"></div>
+                <div class="logo-3d"></div>
             </div>
-        </div>
-        <div class="designer">
-            <img class="fade-mask" src="m.jpg" alt="me">
-            
-        </div>
-    </section>
+            <div>
+                <img src="m.jpg" alt="image">
+            </div>
 
-
-    <!-- About Me-->
-    <section class="about" id="about">
-        <h2 class="section-title">My Journey</h2>
-        <div class="about-content">
-            <p>
-                I'm a passionate web developer and lifelong learner with a love of coding, travelling and sharing knowledge.
-                With skills in HTML, CSS, JAVASCRIPT, and more. I document my growth here to inspire others.
-            </p>
-            <p style="margin-top: 1.5rem;">
-                From climbing volcanoes in Rwanda to tasting street food in Bangkok, every destination has taught me something profound about life, resilience, and human connection.
-            </p>
         </div>
     </section>
+  
 
-    <!-- Skills Section -->
-    <section class="skills" id="skills">
-        <h2 class="section-title">Travel Skills</h2>
-        <div class="skills-container">
-            <div class="skill-card">
-                <i class="fas fa-plane-departure skill-icon"></i>
-                <h3 class="skill-name">Navigation</h3>
-                <div class="skill-bar">
-                    <div class="skill-progress" data-percent="92">
-                        <div class="skill-percent">92%</div>
-                    </div>
-                </div>
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <h2 class="section-title">Our Services</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <i class="fas fa-code service-icon"></i>
+                <h3>Web Development</h3>
+                <p>Custom, responsive, and high-performance web applications built with modern frameworks and best practices.</p>
             </div>
-
-            <div class="skill-card">
-                <i class="fas fa-camera skill-icon"></i>
-                <h3 class="skill-name">Photography</h3>
-                <div class="skill-bar">
-                    <div class="skill-progress" data-percent="88">
-                        <div class="skill-percent">88%</div>
-                    </div>
-                </div>
+            <div class="service-card">
+                <i class="fas fa-mobile-alt service-icon"></i>
+                <h3>Mobile Apps</h3>
+                <p>Native and cross-platform mobile solutions for iOS and Android with seamless user experiences.</p>
             </div>
-
-            <div class="skill-card">
-                <i class="fas fa-language skill-icon"></i>
-                <h3 class="skill-name">Languages</h3>
-                <div class="skill-bar">
-                    <div class="skill-progress" data-percent="75">
-                        <div class="skill-percent">75%</div>
-                    </div>
-                </div>
+            <div class="service-card">
+                <i class="fas fa-brain service-icon"></i>
+                <h3>AI & ML</h3>
+                <p>Intelligent systems, predictive analytics, and automation powered by advanced machine learning.</p>
             </div>
-
-            <div class="skill-card">
-                <i class="fas fa-map-marked-alt skill-icon"></i>
-                <h3 class="skill-name">Route Planning</h3>
-                <div class="skill-bar">
-                    <div class="skill-progress" data-percent="90">
-                        <div class="skill-percent">90%</div>
-                    </div>
-                </div>
+            <div class="service-card">
+                <i class="fas fa-shield-alt service-icon"></i>
+                <h3>Cybersecurity</h3>
+                <p>Enterprise-grade security solutions, penetration testing, and compliance management.</p>
             </div>
-
-            <div class="skill-card">
-                <i class="fas fa-utensils skill-icon"></i>
-                <h3 class="skill-name">Local Cuisine</h3>
-                <div class="skill-bar">
-                    <div class="skill-progress" data-percent="95">
-                        <div class="skill-percent">95%</div>
-                    </div>
-                </div>
+            <div class="service-card">
+                <i class="fas fa-cloud service-icon"></i>
+                <h3>Cloud Solutions</h3>
+                <p>Scalable infrastructure, DevOps, and cloud migration with AWS, Azure, and Google Cloud.</p>
             </div>
-
-            <div class="skill-card">
-                <i class="fas fa-hiking skill-icon"></i>
-                <h3 class="skill-name">Survival</h3>
-                <div class="skill-bar">
-                    <div class="skill-progress" data-percent="85">
-                        <div class="skill-percent">85%</div>
-                    </div>
-                </div>
+            <div class="service-card">
+                <i class="fas fa-vr-cardboard service-icon"></i>
+                <h3>AR/VR</h3>
+                <p>Immersive augmented and virtual reality experiences for training, gaming, and marketing.</p>
             </div>
         </div>
     </section>
 
-    <!-- Blog Posts -->
-    <section class="blog" id="blog">
-        <h2 class="section-title">Latest Adventures</h2>
-        <div class="blog-grid">
-            <div class="blog-card">
-                <img src="t.jpg" alt="Uganda">
-                <div class="new-badge">NEW</div>
-                <div class="blog-overlay">
-                    <h3 class="blog-title">Sunsets Over Lake Victoria</h3>
-                    <div class="blog-meta">
-                        <span>Nov 2025</span>
-                        <span>Uganda</span>
-                    </div>
+    <!-- Stats Section -->
+    <section class="stats" id="stats">
+        <h2 class="section-title">Our Achievements</h2>
+        <div class="stats-container">
+            <div class="stat-item">
+                <div class="stat-circle">
+                    <svg width="180" height="180">
+                        <defs>
+                            <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#00e0ff"/>
+                                <stop offset="100%" stop-color="#7c3aed"/>
+                            </linearGradient>
+                        </defs>
+                        <circle class="circle-bg" cx="90" cy="90" r="80"></circle>
+                        <circle class="circle-progress" cx="90" cy="90" r="80" data-percent="95"></circle>
+                    </svg>
+                    <div class="stat-number">95%</div>
                 </div>
+                <div class="stat-label">Client Satisfaction</div>
             </div>
 
-            <div class="blog-card">
-                <img src="v.jpg" alt="Rwanda">
-                <div class="new-badge">NEW</div>
-                <div class="blog-overlay">
-                    <h3 class="blog-title">The Virunga Volcano</h3>
-                    <div class="blog-meta">
-                        <span>Oct 2025</span>
-                        <span>Rwanda</span>
-                    </div>
+            <div class="stat-item">
+                <div class="stat-circle">
+                    <svg width="180" height="180">
+                        <circle class="circle-bg" cx="90" cy="90" r="80"></circle>
+                        <circle class="circle-progress" cx="90" cy="90" r="80" data-percent="87"></circle>
+                    </svg>
+                    <div class="stat-number">87%</div>
                 </div>
+                <div class="stat-label">Projects Delivered</div>
             </div>
 
-            <div class="blog-card">
-                <img src="p.jpg" alt="Thailand">
-                <div class="new-badge">NEW</div>
-                <div class="blog-overlay">
-                    <h3 class="blog-title">Bangkok Street Food Guide</h3>
-                    <div class="blog-meta">
-                        <span>Sep 2025</span>
-                        <span>Thailand</span>
-                    </div>
+            <div class="stat-item">
+                <div class="stat-circle">
+                    <svg width="180" height="180">
+                        <circle class="circle-bg" cx="90" cy="90" r="80"></circle>
+                        <circle class="circle-progress" cx="90" cy="90" r="80" data-percent="92"></circle>
+                    </svg>
+                    <div class="stat-number">92%</div>
+                </div>
+                <div class="stat-label">Innovation Rate</div>
+            </div>
+
+            <div class="stat-item">
+                <div class="stat-circle">
+                    <svg width="180" height="180">
+                        <circle class="circle-bg" cx="90" cy="90" r="80"></circle>
+                        <circle class="circle-progress" cx="90" cy="90" r="80" data-percent="78"></circle>
+                    </svg>
+                    <div class="stat-number">78%</div>
+                </div>
+                <div class="stat-label">Market Growth</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="team" id="team">
+        <h2 class="section-title">Our Expert Team</h2>
+        <div class="team-grid">
+            <div class="team-card">
+                <img src="buju.jpg" alt="Team Members">
+                <div class="team-overlay">
+                    <h3 class="team-name">Data visualisation</h3>
+                    <p class="team-role">CEO & Founder</p>
+                </div>
+            </div>
+            <div class="team-card">
+                <img src="b.jpg" alt="Team Member">
+                <div class="team-overlay">
+                    <h3 class="team-name">Brainstorming session</h3>
+                    <p class="team-role">Developer</p>
+                </div>
+            </div>
+            <div class="team-card">
+                <img src="c.jpg" alt="Team Member">
+                <div class="team-overlay">
+                    <h3 class="team-name">Mockup on desk</h3>
+                    <p class="team-role">Lead Designer</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact -->
+    <!-- Contact Section -->
     <section class="contact" id="contact">
-        <h2 class="section-title">Let’s Connect</h2>
+        <h2 class="section-title">Let's Build Together</h2>
         <div class="contact-container">
-            <p style="margin-bottom: 1.5rem; color: #ffccbc; font-size: 1.2rem;">Have a story to share? Let’s collaborate!</p>
+            <p style="margin-bottom: 1.5rem; color: #b0b8ff; font-size: 1.2rem;">Ready to transform your vision into reality?</p>
             <form class="contact-form">
                 <div class="form-group">
                     <input type="text" required />
-                    <label>Your Name</label>
+                    <label>Full Name</label>
                 </div>
                 <div class="form-group">
                     <input type="email" required />
-                    <label>Email</label>
+                    <label>Email Address</label>
                 </div>
                 <div class="form-group">
                     <textarea rows="5" required></textarea>
@@ -944,16 +942,17 @@
     <!-- Footer -->
     <footer>
         <div class="social-links">
+            <a href="#"><i class="fab fa-github"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
             <a href="#"><i class="fab fa-instagram"></i></a>
             <a href="#"><i class="fab fa-youtube"></i></a>
-            <a href="#"><i class="fab fa-tiktok"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
         </div>
-        <p>&copy; 2025 MAVIN EPUCU. | 25/BSE/BU/R/0012. | Kampala, Uganda|</p>
+        <p>&copy; 2025 WIX Technologies by MAVIN EPUCU| 25/BSE/BU/R/0012 | Uganda</p>
     </footer>
 
     <script>
-        // Navbar Scroll Effect
+        // Navbar Scroll Effect with Blur
         let lastScroll = 0;
         window.addEventListener('scroll', () => {
             const navbar = document.getElementById('navbar');
@@ -975,7 +974,7 @@
         menuToggle.addEventListener('click', () => {
             navLinks.classList.toggle('active');
             const icon = menuToggle.querySelector('i');
-            icon.classList.toggle('fa-compass');
+            icon.classList.toggle('fa-bars');
             icon.classList.toggle('fa-times');
         });
 
@@ -984,27 +983,44 @@
             link.addEventListener('click', () => {
                 navLinks.classList.remove('active');
                 const icon = menuToggle.querySelector('i');
-                icon.classList.add('fa-compass');
+                icon.classList.add('fa-bars');
                 icon.classList.remove('fa-times');
             });
         });
 
-        // Skill Progress Animation
+        // Animated Circular Progress
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    const progressBars = entry.target.querySelectorAll('.skill-progress');
-                    progressBars.forEach(bar => {
-                        const percent = bar.getAttribute('data-percent');
-                        bar.style.width = percent + '%';
-                        bar.querySelector('.skill-percent').textContent = percent + '%';
+                    const circles = entry.target.querySelectorAll('.circle-progress');
+                    circles.forEach(circle => {
+                        const percent = circle.getAttribute('data-percent');
+                        const offset = 502 - (502 * percent / 100);
+                        circle.style.strokeDashoffset = offset;
+                        
+                        // Animate number
+                        const number = circle.parentElement.querySelector('.stat-number');
+                        let start = 0;
+                        const end = parseInt(percent);
+                        const duration = 2000;
+                        const increment = end / (duration / 16);
+                        
+                        const timer = setInterval(() => {
+                            start += increment;
+                            if (start >= end) {
+                                number.textContent = end + '%';
+                                clearInterval(timer);
+                            } else {
+                                number.textContent = Math.floor(start) + '%';
+                            }
+                        }, 16);
                     });
                 }
             });
         }, { threshold: 0.7 });
 
-        document.querySelectorAll('.skill-card').forEach(card => {
-            observer.observe(card);
+        document.querySelectorAll('.stat-item').forEach(item => {
+            observer.observe(item);
         });
 
         // Smooth Scrolling
@@ -1024,16 +1040,16 @@
         // Form Submission
         document.querySelector('.contact-form').addEventListener('submit', function(e) {
             e.preventDefault();
-            alert('Thank you for your message! I’ll reply within 24 hours.');
+            alert('Thank you for reaching out! We will contact you within 24 hours.');
             this.reset();
         });
 
-        // Parallax Effect
+        // Parallax Effect on Hero
         window.addEventListener('scroll', () => {
             const scrolled = window.pageYOffset;
-            const hero = document.querySelector('.hero');
+            const parallax = document.querySelector('.hero');
             const speed = scrolled * 0.5;
-            hero.style.transform = `translateY(${speed}px)`;
+            parallax.style.transform = `translateY(${speed}px)`;
         });
     </script>
 </body>
